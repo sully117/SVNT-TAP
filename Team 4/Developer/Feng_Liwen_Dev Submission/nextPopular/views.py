@@ -13,6 +13,7 @@ def home(request):
     return render(request, 'home.html', context)
 
 def get_pred(link):
+    # TODO: integrate with data scientist
     return 100
 
 @ensure_csrf_cookie
