@@ -1,0 +1,16 @@
+body { 
+    
+}  
+
+@keyframes backgroundchange {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.boxed{
+    border: 1px solid white;
+    background: linear-gradient(-45deg, red, orange, yellow, yellowgreen, lightskyblue, violet, hotpink);
+    background-size: 2000% 2000%;
+    animation: backgroundchange 20s ease infinite; 
+}
