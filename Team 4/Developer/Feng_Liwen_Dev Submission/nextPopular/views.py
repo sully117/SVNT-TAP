@@ -23,6 +23,7 @@ def add_pred(request):
     pred_form = PredForm(request.POST, instance = new_pred)
 
     new_pred.link = request.POST['link']
+    # TODO: get directly from database
     new_pred.viewcnt = get_pred(new_pred.link)
     pred_form.save()
     context['pred_form'] = pred_form
