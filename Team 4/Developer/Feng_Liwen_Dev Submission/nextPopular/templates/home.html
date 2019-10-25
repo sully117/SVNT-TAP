@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Next Popular</title>
+</head>
+
+
+<body>
+<div class="new_pred">
+    <form method="post" action="{% url 'add-pred' %}">
+        <table>
+            {% for field in pred_form.visible_fields %}
+            <tr>
+                <td>{{field.label_tag}}</td>
+                <td>{{field}}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+        {% csrf_token %}
+    </form>
+
+</div>
+
+<div class = "result">
+    {% if cnt %}
+    <h3>Your video is predicted to have {{ cnt }} view counts!</h3>
+    {% endif %}
+</div>
+</body>
+</html>

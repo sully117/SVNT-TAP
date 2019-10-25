@@ -1,0 +1,3 @@
+org.springframework.context.ApplicationContextInitializer=\
+com.javaxiaodi.springapi.listener.AppContextInitializer
+
