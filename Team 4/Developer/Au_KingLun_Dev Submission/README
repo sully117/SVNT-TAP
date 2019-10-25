@@ -1,0 +1,7 @@
+My coding files include:
+server.py 
+templates : index.html, processing.html, result.html
+Instruction
+To run the project, please run the following command.
+
+python server.py 
