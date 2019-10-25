@@ -1,0 +1,30 @@
+{% extends "YoutubePro/base.html" %}
+{% block headInfo %}
+
+        <li><a id="id_register_link" href="{% url 'register' %}"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+{% endblock %}
+{% block userInfo %}
+    <p class="title">Login</p>
+
+    <form method="post" action="{% url 'login' %}">
+        <table>
+            {% for field in form.visible_fields %}
+                <tr>
+                    <td>{{field.label_tag}}</td>
+                    <td>{{field}}</td>
+                    <td class="errorlist">
+                        {% for error in field.errors %} {{error}} {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% csrf_token %}
+        <button type="submit" id="id_login_button">Submit</button>
+    </form>
+    {% for error in form.non_field_errors %}
+        <p class="errorlist">
+            {{ error }}
+        </p>
+    {% endfor %}
+
+{% endblock %}
