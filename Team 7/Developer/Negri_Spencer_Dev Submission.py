@@ -2,7 +2,13 @@ import collections
 import csv
 import sys
 
+#The idea behind this component is to create a user, set up their default attributes, and then
+#generate a report for them based on how other YouTubers are doing with those topics
+#the report befow is somewhat limited, but given more time a more specific report could be generated
+#with a rating system regarding the users topics
 
+#a class to keep track of who are users are and what attributes they want to make videos about
+#each user will always have a set of defualt atrributes.
 class User(object):
 	def __init__(self, username, default_attributes, topics):
 		self.username = username
@@ -51,7 +57,11 @@ class User(object):
 			print "Topic like:dislike ratio: {}".format(str(ratio))
 			print "Average views per topic: {}".format(str(average_views))
 			print "------------------END {}------------------".format(key_word)
-			
+
+
+#this class is for our topics. Topics are essentially keywords with data attached to them such as likes, views, etc.
+#we keep track of these topics to provide the user with the most up to date information regading the topics they are passionate about
+#and want to make Youtube vidoes about			
 class Topic(object):
 	def __init__(self, keyword, frequency, likes, dislikes, views_associated, videos_associated):
 		self.keyword = keyword
