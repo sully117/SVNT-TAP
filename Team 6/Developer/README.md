@@ -12,3 +12,6 @@ Predictions are made based on statistics about past videos other Youtubers have 
 Python=3.8
 Keras=2.3.0
 nltk=3.4.5
+Javascript
+HTML
+CSS

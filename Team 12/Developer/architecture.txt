@@ -1,0 +1,8 @@
+Architecture Outline:
+	1) Front-end - user log's in
+		a) Feature generates page with user welcome, and dashboard with trending topics and a tag search
+	2) Youtube server request <- my component contribution
+	3) Parse data from request
+	4) Calculate data model statistics
+	5) Redirect to page with results
+	
