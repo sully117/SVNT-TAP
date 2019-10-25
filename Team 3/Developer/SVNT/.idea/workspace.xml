@@ -2,14 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd0fa86b-ef83-41d2-941e-62a4573dccb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoutubePro/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoutubePro/static/YoutubePro/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YoutubePro/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Team 11/Developer/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SVNT.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVNT/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVNT/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVNT/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVNT/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/static/YoutubePro/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/YoutubePro/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Team 6/Developer/webpage.css" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,35 +40,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YoutubePro/templates/YoutubePro/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1500">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YoutubePro/templates/YoutubePro/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/YoutubePro/templates/YoutubePro/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" selection-start-column="22" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,9 +72,6 @@
         <option value="$PROJECT_DIR$/SVNT/views.py" />
         <option value="$PROJECT_DIR$/SVNT/settings.py" />
         <option value="$PROJECT_DIR$/SVNT/wsgi.py" />
-        <option value="$PROJECT_DIR$/YoutubePro/forms.py" />
-        <option value="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/login.html" />
-        <option value="$PROJECT_DIR$/YoutubePro/models.py" />
         <option value="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/base.html" />
         <option value="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/register.html" />
         <option value="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/GlobalStream.html" />
@@ -88,6 +79,9 @@
         <option value="$PROJECT_DIR$/SVNT/urls.py" />
         <option value="$PROJECT_DIR$/YoutubePro/views.py" />
         <option value="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/dashboard.html" />
+        <option value="$PROJECT_DIR$/YoutubePro/templates/YoutubePro/login.html" />
+        <option value="$PROJECT_DIR$/YoutubePro/forms.py" />
+        <option value="$PROJECT_DIR$/YoutubePro/models.py" />
       </list>
     </option>
   </component>
@@ -102,59 +96,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SVNT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SVNT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SVNT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SVNT" type="462c0819:PsiDirectoryNode" />
-              <item name="SVNT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SVNT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SVNT" type="462c0819:PsiDirectoryNode" />
-              <item name="YoutubePro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SVNT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SVNT" type="462c0819:PsiDirectoryNode" />
-              <item name="YoutubePro" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SVNT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SVNT" type="462c0819:PsiDirectoryNode" />
-              <item name="YoutubePro" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SVNT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SVNT" type="462c0819:PsiDirectoryNode" />
-              <item name="YoutubePro" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="YoutubePro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SVNT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SVNT" type="462c0819:PsiDirectoryNode" />
-              <item name="YoutubePro" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SVNT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SVNT" type="462c0819:PsiDirectoryNode" />
-              <item name="YoutubePro" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="YoutubePro" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -223,16 +165,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572024999578</updated>
-      <workItem from="1572025001020" duration="5588000" />
+      <workItem from="1572025001020" duration="6415000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5588000" />
+    <option name="totallyTimeSpent" value="6415000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -292,36 +233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YoutubePro/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YoutubePro/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1474">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YoutubePro/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SVNT/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -371,24 +282,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/YoutubePro/templates/YoutubePro/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="-540">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YoutubePro/templates/YoutubePro/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        <state relative-caret-position="600">
+          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YoutubePro/templates/YoutubePro/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        <state relative-caret-position="325">
+          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YoutubePro/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YoutubePro/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YoutubePro/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YoutubePro/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
