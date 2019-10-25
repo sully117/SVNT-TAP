@@ -5,7 +5,7 @@ import YoutubeModel
 
 
 class YoutubeController:
-
+    # TODO: Connect the controller to the javascript button!
     # Create the youtube Controller
     def __init__(self, the_model):
         self.model = the_model
