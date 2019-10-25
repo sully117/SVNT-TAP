@@ -1,6 +1,19 @@
-This is a Django Project. My coding files include:
+# Architecture
+
+See architecture.jpeg for architecture outline
+
+# Coding Description
+
+This is a Django Project. 
+
+## My coding files include:
 
 - nextPopular: views.py, forms.py, models.py, 
   - templates : home.html
+  
+## Instruction
+To run the project, please run the following command.
 
-Please run "python manage.py runserver" to run the project.
+```
+python manage.py runserver
+```
