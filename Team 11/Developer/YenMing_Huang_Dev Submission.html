@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Youtube viral generator</title>
+    <style type="text/css">
+        body {
+            background-image: url('http://cs-server.usc.edu:45678/hw/hw8/images/background.png');
+        }
+
+        #container {
+            min-width: 310px;
+            max-width: 1200px;
+        }
+
+        .favoriteList,
+        .stockList {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .favoriteList.ng-enter,
+        .favoriteList.ng-leave,
+        .stockList.ng-enter,
+        .stockList.ng-leave {
+            transition: all linear 0.5s;
+            width: 100%;
+            position: relative;
+        }
+
+        .favoriteList.ng-enter {
+            left: -100%;
+        }
+
+        .favoriteList.ng-enter.ng-enter-active {
+            left: 0;
+        }
+
+        .favoriteList.ng-leave {
+            display: none
+        }
+
+        .favoriteList.ng-leave.ng-leave.ng-leave-active {}
+
+        .stockList.ng-enter {
+            left: 100%;
+        }
+
+        .stockList.ng-enter.ng-enter-active {
+            left: 0;
+        }
+
+        .stockList.ng-leave {
+            display: none
+        }
+
+        .stockList.ng-leave.ng-leave.ng-leave-active {
+            left: 100%;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+    <script src="index.js"></script>
+
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="http://connect.facebook.net/en_US/sdk.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="listinit()">
+    <br>
+    <!-- search part -->
+    <div class="container-fuild">
+        <div class="container well">
+                <div class="col-xs-12">
+                    <img src="https://img.icons8.com/color/96/000000/youtube.png">
+                </div>
+            <form>
+                <div class="row">
+                    <div class="col-xs-12 col-md-3 col-lg-3">
+                       <h4>Youtube Viral Generator</h4>
+                    </div>
+                    <div class="col-xs-12 col-md-5 col-lg-5">
+                        <input type="text" id="searchTx" class="form-control input-md" name="symbol" placeholder="e.g. Animal" ng-model="sym" ng-blur="checkValid(sym)">
+                        <span class="help-block" ng-show="errorTx">Please enter a keyword.</span>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-3">
+                        <button type="submit" class="btn btn-primary" name="submit" ng-click="changeToPanel2();search(sym)" ng-disabled="!sym"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
+                        <button type="button" class="btn btn-default" ng-click="clear()"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Clear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <hr style="margin-left: -15px; margin-right: -15px;" size="2" align="center" color="#FBFBFB">
+    </div>
+    <br>
+    <div class="container-fuild">
+        <div class="container well">
+            <!-- favorite list part -->
+            <div ng-if="!panel1" class="panel panel-default favoriteList">
+                <div class="panel-heading">
+                    <label>Favorite Trending List</label>
+                    <div class="pull-right">
+                        <span class="hidden-xs">Automatic Refresh:&nbsp</span>
+                        <input id="autoRefresh" type="checkbox" data-toggle="toggle" ng-model="ref" ng-change="autoRefresh(ref)">
+                        <button type="button" class="btn btn-default" ng-click="refreshFav()"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+                        <button class="btn btn-default" ng-click="changeToPanel2();draw()" ng-disabled="detailblock"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 col-lg-1">
+                            <label>&nbsp&nbsp&nbsp Sort by</label>
+                        </div>
+                        <div class="col-md-3 col-lg-3">
+                            <select class="form-control" ng-model="sort.field" ng-init="sort.field='default'">
+                            <option value='default'>Default</option>
+                            <option value=0>Title</option>
+                            <option value=1>Treading_date</option>
+                            <option value=2>Category_id</option>
+                            <option value=3>Public_time</option>
+                            <option value=4>Tags</option>
+                            <option value=4>Views</option>
+                            <option value=4>Likes</option>
+                            <option value=4>DisLikes</option>
+                            <option value=4>Comments</option>
+                        </select>
+                            <label>&nbsp&nbsp&nbsp</label>
+                        </div>
+                        <div class="col-md-2 col-lg-1">
+                            <label>&nbsp&nbsp&nbsp Order</label>
+                        </div>
+                        <div class="col-md-3 col-lg-3">
+                            <select class="form-control" ng-model="sort.reverse" ng-init="sort.reverse=''" ng-disabled="sort.field == 'default'">
+                            <option value=''>Ascending</option>
+                            <option value='descend'>Descending</option>
+                        </select>
+                        </div>
+                        <br><br><br>
+                    </div>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Keyword</th>
+                            <th>Views</th>
+                            <th>Trending Time</th>
+                            <th>Trending score</th>
+                        </tr>
+                        <tr ng-repeat="x in favArr | orderBy:sort.field:sort.reverse">
+                            <td><a style="cursor:pointer" ng-click="changeToPanel2();search(x[0])">{{x[0]}}</a></td>
+                            <td>{{x[1]}}</td>
+                            <td>{{x[4] | number:'.0'}}</td>
+                            <td><button ng-click="trashFun(x[0])" type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+                        </tr>
+                    </table>
+                    <div>&nbsp</div>
+                </div>
+            </div>
+            <!-- stock details part -->
+            <div ng-if="!panel2" class="panel panel-default stockList">
+                <div class="panel-heading">
+                    <div class="pull-left">
+                        <button class="btn btn-default" ng-click="changeToPanel1()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+                    </div>
+                    <CENTER><label>Forecast Details</label></CENTER>
+                </div>
+                <div class="panel-body">
+                    <br>
+                    <ul class="nav nav-pills">
+                        <li class="active"><a data-toggle="tab" href="#currentStock"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span><span class="hidden-xs hidden-sm"> Current Trending</span><span class="hidden-md hidden-lg"> Stock</span></a></li>
+                        <li><a data-toggle="tab" href="#historicalCharts"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span><span class="hidden-xs hidden-sm"> Historical Trendings</span><span class="hidden-md hidden-lg"> Charts</span></a></li>
+                        <li><a data-toggle="tab" href="#newsFeeds"><span class="glyphicon glyphicon-link" aria-hidden="true"></span><span class="hidden-xs hidden-sm"> News Feeds</span><span class="hidden-md hidden-lg"> News</span></a></li>
+                    </ul>
+                    <hr size="2" align="center" noshade width="99%" color="#FBFBFB">
+                    <div class="tab-content">
+                        <div id="currentStock" class="tab-pane fade in active">
+                            <div class="container-fuild">
+                                <div class="row">
+                                    <!-- table part -->
+                                    <div class="col-xs-12 col-md-6 col-lg-6">
+                                        <label>Trending Details</label>
+                                        <div class="pull-right">
+                                            <button ng-if="fav == false" ng-click="setFav()" class="btn btn-default btn-lg" type="submit"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></button>
+                                            <button ng-if="fav == true" ng-click="setFav()" class="btn btn-default btn-lg" type="submit"><span class="glyphicon glyphicon-star" style="color:#FDD431" aria-hidden="true"></span></button>
+                                            <button class="btn btn-default" ng-click="postFB()"><img src="https://findicons.com/files/icons/519/handycons_2/128/facebook.png" class="img-rounded" width="30" height="32"></button>
+                                            <p>
+                                        </div>
+                                        <br><br><br><br>
+                                        <div ng-show="tableLoadbar" class="progress">
+                                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%"></div>
+                                        </div>
+                                        <div ng-hide="tableLoadbar || priceerror">
+                                            <table class="table table-striped">
+                                                <tr>
+                                                    <td width='200' height='50'><b>Keyword</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height='50'><b>Likes</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height='50'><b>Dislikes</b></td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height='50'><b>Views</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td height='50'><b>Trending Score</b></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- charts part -->
+                                    <div class="col-xs-12 col-md-6 col-lg-6">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#price" ng-click="changeOptions(0)">Likes</a></li>
+                                            <li><a data-toggle="tab" href="#sma" ng-click="changeOptions(1)">Dislikes</a></li>
+                                            <li><a data-toggle="tab" href="#ema" ng-click="changeOptions(2)">Views</a></li>
+                                            <li><a data-toggle="tab" href="#stoch" ng-click="changeOptions(3)">Trending Score</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="price" class="tab-pane fade in active">
+                                                <div ng-show="priceLoadbar" class="progress">
+                                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%"></div>
+                                                </div>
+                                                <div ng-hide="priceLoadbar || priceerror" id="container1"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="historicalCharts" class="tab-pane fade">
+                            <div ng-show="hisPriceLoadbar" class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%"></div>
+                            </div>
+                            <div ng-hide="hisPriceLoadbar || priceerror" id="container"></div>
+                        </div>
+                        <div id="newsFeeds" class="tab-pane fade">
+                            <br>
+                            <div ng-show="newsLoadbar" class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%"></div>
+                            </div>
+                            <div ng-hide="newsLoadbar || newserror" class="jumbotron">
+                                <h4><b><a href="{{newsData[0][1]}}" target="_blank">{{newsData[0][0]}}</a></b></h4>
+                                <br>
+                                <h5><b>Author: {{newsData[0][3]}}</b></h5>
+                                <h5><b>Date: {{newsData[0][2]}} EDT</b></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

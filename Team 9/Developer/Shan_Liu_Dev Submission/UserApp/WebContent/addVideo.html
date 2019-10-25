@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Video</title>
+</head>
+<body>
+	<h1>Video Uplodaing:</h1>
+	<form method="post" action="addVideoServlet">
+		<table>
+			<tr>
+			<td>File : </td>
+			<td>
+			<form action="https://upload.embed.ly/1/video?key=YOUR_API_KEY" method="POST" enctype="multipart/form-data">
+    			<input id="video_file" name="video_file" type="file">
+    			<input type="submit" class="button" value="Upload">
+			</form>
+		    </td>
+			</tr>
+			
+			<tr>
+				<td>Catagories :</td>
+				<td><input name="Catagories" /></td>
+			</tr>
+			<tr>
+				<td>Region :</td>
+				<td><input name="Region" /></td>
+			</tr>
+			<tr>
+				<td>tags:</td>
+				<td><input name="tags" /></td>
+			</tr>
+			
+			<!-- <tr>
+				<td>ChannelID:</td>
+				<td><input name="password" type="password" /></td>
+			</tr> -->
+			
+			<tr>
+				<td />
+				<td><input type="submit" value="Add" /></td>
+		</table>
+	</form>
+</body>
+</html>
